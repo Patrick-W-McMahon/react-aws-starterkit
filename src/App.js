@@ -8,8 +8,6 @@ import UpdateEmailForm from './aws/auth/UpdateEmailForm';
 import PasswordResetForm from './aws/auth/PasswordResetForm';
 import Dashboard from './Dashboard';
 
-console.log('dashboard', <Dashboard />);
-
 const securePage = () => (
   <Authenticator>
     <Dashboard />
