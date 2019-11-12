@@ -16,12 +16,6 @@ const securePage = () => (
   </Authenticator>
 );
 
-/*
-<Authenticator>
-    <Dashboard />
-  </Authenticator>
-*/
-
 const changePassword = () => (
     <div>
       <ChangePasswordForm />
