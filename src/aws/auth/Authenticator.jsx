@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CognitoState, Logout, Login, NewPasswordRequired, EmailVerification, Confirm } from 'react-cognito';
-import LogoutButton from './LogoutButton';
 import LoginForm from './LoginForm';
 import EmailVerificationForm from './EmailVerificationForm';
 import NewPasswordRequiredForm from './NewPasswordRequiredForm';
 import ConfirmForm from './ConfirmForm';
-import loaderIcon from '../../assets/loading.gif';
+import LoadingScreen from '../../components/LoadingScreen';
 
 
 class Authenticator extends Component {
@@ -20,28 +19,26 @@ class Authenticator extends Component {
         if(!React.isValidElement(children)) {
           return <div>Missing or invalid child element for Authenticator</div>;
         }
-        const childrenWithProps = React.Children.map(children, child => React.cloneElement(child, {
-          LogoutButton, 
-          Logout,
-          user,
-          attributes
-        }));
         return (
-          <div>
-            {childrenWithProps}
-          </div>
+          <Fragment>
+            {React.Children.map(children, child => React.cloneElement(child, {
+              Logout,
+              user,
+              attributes
+            }))}
+          </Fragment>
         );
       case CognitoState.AUTHENTICATED:
       case CognitoState.LOGGING_IN:
         return (
-          <div>
-            <img src={loaderIcon} alt="loading" />
-          </div>
+          <Fragment>
+            <LoadingScreen />
+          </Fragment>
         );
       case CognitoState.LOGGED_OUT:
       case CognitoState.LOGIN_FAILURE:
         return (
-          <div>
+          <Fragment>
             <p>not logged in</p>
             <Login>
               <LoginForm />
@@ -50,7 +47,7 @@ class Authenticator extends Component {
               <li><Link to="/register">Register</Link></li>
               <li><Link to="/reset">Password reset</Link></li>
             </ul>
-          </div>
+          </Fragment>
         );
       case CognitoState.MFA_REQUIRED:
         return (

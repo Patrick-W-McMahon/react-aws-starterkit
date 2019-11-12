@@ -6,7 +6,8 @@ import RegisterForm from './aws/auth/RegisterForm';
 import ChangePasswordForm from './aws/auth/ChangePasswordForm';
 import UpdateEmailForm from './aws/auth/UpdateEmailForm';
 import PasswordResetForm from './aws/auth/PasswordResetForm';
-import Dashboard from './Dashboard';
+import Dashboard from './containers/Dashboard';
+import './app.css';
 
 const securePage = () => (
   <Authenticator>

@@ -1,0 +1,18 @@
+body {
+    background: rgb(207, 230, 230);
+}
+
+form > label {
+    display: block;
+}
+
+.loading-icon {
+    width: 10vw;
+    height: auto;
+    position: fixed;
+    top: 20%;
+    left : 40%;
+    right: 40%;
+    display: block;
+    margin: 0 auto 0 auto;
+}
