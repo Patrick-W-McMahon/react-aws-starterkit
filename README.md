@@ -3,9 +3,11 @@ a simple react aws starter kit
 
 
 **Getting started**
+
 first run `npm install` to install all needed packages. Then you will need to locate the config file `/src/config.json` and fill in the following properties from your aws account for cognito.
 
-Example:
+**Example:**
+
     {
         "region": "eu-west-1",
         "userPool": "eu-west-1_3X34Zo9dz",
