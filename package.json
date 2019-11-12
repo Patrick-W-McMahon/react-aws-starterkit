@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "amazon-cognito-identity-js": "^1.19.0",
-    "aws-sdk": "^2.569.0",
+    "aws-sdk": "^2.570.0",
     "react": "^15.6.1",
     "react-cognito": "^1.5.0",
     "react-dom": "^15.6.1",
